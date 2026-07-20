@@ -1,0 +1,32 @@
+generated: '2026-07-18'
+method: searched
+source: https://dev.apptopia.com/
+docs: https://dev.apptopia.com/
+summary:
+  types: [http]
+  http_schemes: [bearer]
+  bearer_format: JWT
+  api_key_in: []
+  oauth2_flows: []
+notes: >-
+  Apptopia's Data API uses JSON Web Token (JWT) bearer authentication. A client
+  POSTs credentials to /api/login and receives a JWT, which is sent verbatim in
+  the Authorization header on every subsequent request. Tokens expire after two
+  weeks by default and must be refreshed by logging in again. There is no OAuth,
+  no API-key parameter, and no per-request scope surface documented.
+schemes:
+  - name: jwtBearer
+    type: http
+    scheme: bearer
+    bearer_format: JWT
+    in: header
+    header: Authorization
+    token_endpoint: https://integrations.apptopia.com/api/login
+    token_lifetime: 1209600  # ~2 weeks in seconds
+    sources: [https://dev.apptopia.com/]
+login:
+  method: POST
+  path: /api/login
+  base_url: https://integrations.apptopia.com
+  credentials: [username, password]
+  returns: JWT (sent as the Authorization header value on subsequent requests)
