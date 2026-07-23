@@ -1,0 +1,25 @@
+generated: '2026-07-18'
+method: searched
+source: https://dev.apptopia.com/
+docs: https://dev.apptopia.com/
+signaled_via: HTTP 429 (Too Many Requests)
+retry_guidance: exponential backoff recommended
+rate_limits:
+  - name: request-rate
+    limit_count: 1000
+    window: 60s
+    unit: requests/minute
+    detail: 1,000 requests per minute over a sliding 60-second window.
+  - name: s3-data-dump
+    limit_count: 300
+    window: 1s
+    unit: GETs/second
+    detail: 300 GET requests per second against S3 data-dump objects.
+  - name: max-ids-per-lookup
+    limit_count: 50
+    unit: ids/request
+    detail: Entity lookup endpoints accept at most 50 ids per request.
+  - name: max-time-series-interval
+    limit_count: 180
+    unit: days/request
+    detail: Time-series endpoints accept at most a 180-day date range per request.

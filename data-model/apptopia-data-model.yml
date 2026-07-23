@@ -1,0 +1,45 @@
+generated: '2026-07-18'
+method: searched
+source: https://dev.apptopia.com/
+note: >-
+  Entity graph derived from the Apptopia Data API object reference (no OpenAPI is
+  published). Entities are keyed by store-scoped ids; :store is one of itunes,
+  google_play, tencent, xiaomi, mobile360.
+entities:
+  - name: parent_company
+    description: Ultimate corporate owner of one or more publishers.
+  - name: publisher
+    description: App developer/publisher account; carries website, HQ country, Crunchbase and LinkedIn data.
+  - name: app
+    description: A single mobile application within a store (name, category, price, ratings, versions, permissions).
+  - name: sdk
+    description: A third-party SDK detected inside apps (name, vendor, function).
+  - name: estimate
+    description: Time-series metrics for an app or publisher (downloads, revenue, DAU/MAU, ARPU, retention).
+  - name: rating
+    description: Time-series ratings/review counts for an app.
+relationships:
+  - from: publisher
+    to: parent_company
+    kind: belongs_to
+    via: parent_company_id
+  - from: app
+    to: publisher
+    kind: belongs_to
+    via: publisher_id
+  - from: app
+    to: sdk
+    kind: has_many
+    via: app_sdks
+  - from: estimate
+    to: app
+    kind: belongs_to
+    via: app_id
+  - from: publisher_estimate
+    to: publisher
+    kind: belongs_to
+    via: publisher_id
+  - from: rating
+    to: app
+    kind: belongs_to
+    via: app_id

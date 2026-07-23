@@ -1,0 +1,23 @@
+# Apptopia
+
+> Apptopia provides investor-grade mobile app market intelligence — download, revenue, usage, ratings, SDK, and advertising estimates across the iTunes App Store, Google Play, Tencent, Xiaomi, and Mobile 360 stores. Its real-time Data API exposes the raw dataset behind these estimates, keyed by store-scoped app, publisher, and parent-company ids and delivered as JSON over HTTPS with JWT bearer authentication.
+
+## APIs
+- [Apptopia Data API docs](https://dev.apptopia.com/): Full endpoint reference (directory, discovery, time-series, entity lookup, search, and data-export endpoints). Base URL https://integrations.apptopia.com.
+
+## Authentication
+- POST /api/login with credentials to receive a JWT; send it verbatim in the Authorization header. Tokens expire after ~2 weeks. See authentication/apptopia-authentication.yml.
+
+## Conventions
+- [Conventions](conventions/apptopia-conventions.yml): pagination (page_token / limit-offset), ISO 8601 dates in EST, model_version parameter, 429 rate-limit signaling.
+- [Rate limits](rate-limits/apptopia-rate-limits.yml): 1,000 req/min, 50 ids/lookup, 180-day interval, 300 S3 GET/s.
+- [Lifecycle](lifecycle/apptopia-lifecycle.yml): estimates model v3.0 current, v2.0 deprecated.
+- [Errors](errors/apptopia-problem-types.yml): JSON errors with HTTP status codes (401, 429).
+- [Data model](data-model/apptopia-data-model.yml): parent_company → publisher → app → sdk/estimate/rating.
+
+## Docs
+- [Knowledge base](https://help.apptopia.com/knowledge)
+- [Pricing](https://apptopia.com/en/pricing-investors/)
+- [Compliance program](https://apptopia.com/en/our-compliance)
+- [Terms of Service](https://apptopia.com/en/terms/)
+- [Privacy Policy](https://apptopia.com/en/privacy/)

@@ -1,0 +1,14 @@
+{
+  "repo": "apptopia",
+  "feeds": [
+    {
+      "source": "https://apptopia.com/en/our-compliance",
+      "feed_url": "https://apptopia.com/en/feed/",
+      "title": "",
+      "saved": 2,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 2,
+  "fetched": "2026-07-20T13:31:34Z"
+}

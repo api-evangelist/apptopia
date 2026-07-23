@@ -1,0 +1,57 @@
+generated: '2026-07-18'
+method: searched
+source: https://dev.apptopia.com/
+docs: https://dev.apptopia.com/
+authentication:
+  style: jwt-bearer
+  header: Authorization
+  detail: See authentication/apptopia-authentication.yml
+idempotency:
+  supported: false
+  note: >-
+    Apptopia's Data API is predominantly read-only (data retrieval across app
+    stores). No Idempotency-Key header or idempotent-write contract is
+    documented, so no Idempotency pointer is emitted.
+pagination:
+  styles:
+    - name: page-token
+      applies_to: discovery endpoints
+      params: [partition, total_partitions, page_token]
+      response_fields: [next_page_token]
+      detail: >-
+        Discovery endpoints split a large dataset into total_partitions
+        (100-10000) roughly-equal segments; each partition is iterated with an
+        opaque next_page_token until exhausted. Partitions may be processed in
+        parallel.
+    - name: limit-offset
+      applies_to: search endpoints
+      params: [limit, offset]
+data_formats:
+  response: application/json
+  date_format: ISO 8601 (YYYY-MM-DD)
+  timezone: Eastern Standard Time (EST) for all timestamps
+versioning:
+  style: model-version-parameter
+  param: model_version
+  values: ['v2.0 (default, deprecated)', 'v3.0']
+  detail: >-
+    Estimate endpoints accept a model_version parameter selecting the estimation
+    model; v2.0 is the deprecated default and v3.0 is the current model.
+  see: lifecycle/apptopia-lifecycle.yml
+rate_limiting:
+  signaled_via: HTTP 429 (Too Many Requests)
+  retry_guidance: exponential backoff recommended
+  see: rate-limits/apptopia-rate-limits.yml
+error_envelope:
+  format: json
+  detail: >-
+    Errors are returned as JSON with an HTTP status code (e.g. 429 for rate
+    limiting, authentication failures on malformed credentials). No RFC 9457
+    problem+json envelope is documented.
+  see: errors/apptopia-problem-types.yml
+request_constraints:
+  max_ids_per_lookup: 50
+  max_time_series_interval_days: 180
+concurrency:
+  supported: true
+  detail: Concurrent requests are supported; discovery partitions can run in parallel.

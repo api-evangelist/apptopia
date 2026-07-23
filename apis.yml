@@ -1,7 +1,28 @@
 aid: apptopia
 name: Apptopia
-description: Apptopia is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Apptopia is a mobile app market-intelligence company that delivers
+  investor-grade estimates of app downloads, revenue, usage, ratings, SDK
+  adoption, and advertising activity across the iTunes App Store, Google Play,
+  Tencent, Xiaomi, and Mobile 360 stores. Its data is derived from a real-user
+  device panel and is trusted by financial institutions, ad-tech firms, and app
+  publishers to track competitors, size markets, and validate investment theses.
+  The Apptopia Data API exposes the raw dataset behind these estimates as JSON
+  over HTTPS, organized into directory, discovery, time-series, entity-lookup,
+  search, and data-export endpoints, authenticated with JSON Web Tokens.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://apptopia.com/en/wp-content/uploads/2026/04/Group-10-1.png
 url: https://raw.githubusercontent.com/api-evangelist/apptopia/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,15 +32,86 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- Mobile
+- App Store Intelligence
+- Market Intelligence
+- Alternative Data
+- Analytics
+- Consumer Insights
+- Advertising
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Apptopia Data API
+  description: >-
+    Real-time REST API exposing raw mobile app-store data — apps, publishers,
+    parent companies, SDKs, download/revenue/usage estimates, ratings, top
+    charts, and advertising intelligence across iTunes, Google Play, Tencent,
+    Xiaomi, and Mobile 360. JSON over HTTPS with JWT bearer authentication.
+  humanURL: https://dev.apptopia.com/
+  baseURL: https://integrations.apptopia.com
+  properties:
+  - type: Documentation
+    url: https://dev.apptopia.com/
+  - type: APIReference
+    url: https://dev.apptopia.com/
+  - type: Authentication
+    url: authentication/apptopia-authentication.yml
+  - type: Conventions
+    url: conventions/apptopia-conventions.yml
+  - type: RateLimits
+    url: rate-limits/apptopia-rate-limits.yml
+  - type: Lifecycle
+    url: lifecycle/apptopia-lifecycle.yml
+  - type: Deprecation
+    url: lifecycle/apptopia-lifecycle.yml
+  - type: ErrorCatalog
+    url: errors/apptopia-problem-types.yml
+  - type: Conformance
+    url: conformance/apptopia-conformance.yml
+  - type: DataModel
+    url: data-model/apptopia-data-model.yml
+  - type: MCPServer
+    url: mcp/apptopia-mcp.yml
 common:
 - type: Website
   url: https://apptopia.com
+- type: DeveloperPortal
+  url: https://dev.apptopia.com/
+- type: Documentation
+  url: https://dev.apptopia.com/
+- type: APIReference
+  url: https://dev.apptopia.com/
+- type: Authentication
+  url: authentication/apptopia-authentication.yml
+- type: Support
+  url: https://help.apptopia.com/knowledge
+- type: Pricing
+  url: https://apptopia.com/en/pricing-investors/
+- type: Login
+  url: https://apptopia.com/users/sign_in
+- type: TermsOfService
+  url: https://apptopia.com/en/terms/
+- type: PrivacyPolicy
+  url: https://apptopia.com/en/privacy/
+- type: Compliance
+  url: https://apptopia.com/en/our-compliance
+- type: Blog
+  url: https://apptopia.com/en/insights/
+- type: GitHubOrganization
+  url: https://github.com/apptopia
+- type: LLMsTxt
+  url: llms/apptopia-llms.txt
+- type: DomainSecurity
+  url: security/apptopia-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

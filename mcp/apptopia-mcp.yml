@@ -1,0 +1,64 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: https://dev.apptopia.com/
+note: >-
+  No official hosted or remote MCP server is published by Apptopia. This is a
+  CANDIDATE tool list derived from the documented Data API endpoints
+  (https://dev.apptopia.com/) as a starting point for an MCP wrapper. Base URL
+  https://integrations.apptopia.com; JWT bearer auth (see
+  authentication/apptopia-authentication.yml). Store path params (:store) cover
+  itunes, google_play, tencent, xiaomi, mobile360.
+server:
+  name: apptopia
+  transport: http
+  url: null   # not published
+tools:
+  - name: list_countries
+    description: Directory of supported countries.
+    source_endpoint: GET /api/countries
+  - name: list_categories
+    description: Directory of app-store categories for a store.
+    source_endpoint: GET /api/:store/categories
+  - name: list_tags
+    description: Directory of tags.
+    source_endpoint: GET /api/tags
+  - name: discover_apps
+    description: Iterate the full app catalog for a store via partitions.
+    source_endpoint: GET /api/:store/app/discovery
+  - name: discover_publishers
+    description: Iterate publishers for a store via partitions.
+    source_endpoint: GET /api/:store/publisher/discovery
+  - name: discover_parent_companies
+    description: Iterate parent companies via partitions.
+    source_endpoint: GET /api/parent_company/discovery
+  - name: get_app
+    description: Look up app records by id (max 50).
+    source_endpoint: GET /api/:store/app
+  - name: get_publisher
+    description: Look up publisher records by id (max 50).
+    source_endpoint: GET /api/:store/publisher
+  - name: get_sdk
+    description: Look up SDK records by id.
+    source_endpoint: GET /api/:store/sdk
+  - name: get_app_estimates
+    description: Downloads/revenue/DAU/MAU estimates time series for an app.
+    source_endpoint: GET /api/:store/estimates
+  - name: get_app_ranks
+    description: App rank time series.
+    source_endpoint: GET /api/:store/app_ranks
+  - name: get_ratings
+    description: Ratings time series for an app.
+    source_endpoint: GET /api/:store/ratings
+  - name: get_top_charts
+    description: Top-chart rank lists for a store.
+    source_endpoint: GET /api/:store/rank_lists
+  - name: get_new_releases
+    description: Apps released in the last 30 days.
+    source_endpoint: GET /api/:store/new_releases
+  - name: search_apps
+    description: Search apps with a JSON query (limit/offset).
+    source_endpoint: POST /api/app_search
+  - name: search_publishers
+    description: Search publishers with a JSON query.
+    source_endpoint: POST /api/publisher_search

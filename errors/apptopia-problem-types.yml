@@ -1,0 +1,21 @@
+generated: '2026-07-18'
+method: searched
+source: https://dev.apptopia.com/
+format: json
+envelope: >-
+  Errors are returned as JSON accompanied by a standard HTTP status code. No
+  RFC 9457 application/problem+json envelope is documented.
+problems:
+  - status: 401
+    title: Authentication failed
+    cause: >-
+      Missing, expired, or malformed JWT in the Authorization header. The docs
+      note credentials errors often stem from extra spaces around "=" signs.
+    remediation: Re-authenticate via POST /api/login and resend the fresh JWT verbatim.
+  - status: 429
+    title: Too Many Requests
+    cause: >-
+      A rate limit was exceeded (1,000 req/min sliding window, or 300 S3
+      GETs/second).
+    remediation: Apply exponential backoff before retrying.
+    see: rate-limits/apptopia-rate-limits.yml

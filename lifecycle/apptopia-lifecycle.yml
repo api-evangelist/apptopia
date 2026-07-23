@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: searched
+source: https://dev.apptopia.com/
+versioning:
+  scheme: model-version-parameter
+  param: model_version
+  current: v3.0
+  docs: https://dev.apptopia.com/
+  detail: >-
+    Estimate endpoints select an estimation model via the model_version query
+    parameter. v3.0 is the current model; v2.0 remains the default for backward
+    compatibility but is marked deprecated.
+deprecation:
+  policy_url: https://dev.apptopia.com/
+  sunset_header: false
+  detail: >-
+    The v2.0 estimates model is documented as deprecated (superseded by v3.0).
+    No RFC 8594 Sunset/Deprecation response headers are documented.
+  deprecated_models:
+    - v2.0
+data_freshness:
+  daily_update: 02:00 EST
+  data_dumps_available: 10:00 EST
+  fastest_refresh: every 4 hours (panel-derived metrics)
+sla:
+  url: null
+  uptime_target: null
+status_page: null
