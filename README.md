@@ -64,6 +64,105 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Apptopia is a company surfaced as a portfolio company of 500-global and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Apptopia is a mobile app market-intelligence company that delivers investor-grade estimates of app downloads, revenue, usage, ratings, SDK adoption, and advertising activity across the iTunes App Store, Google Play, Tencent, Xiaomi, and Mobile 360 stores. Its data is derived from a real-user device panel and is trusted by financial institutions, ad-tech firms, and app publishers to track competitors, size markets, and validate investment theses. The Apptopia Data API exposes the raw dataset behind these estimates as JSON over HTTPS, organized into directory, discovery, time-series, entity-lookup, search, and data-export endpoints, authenticated with JSON Web Tokens.
 
-Backed by: 500-global — https://apptopia.com
+**Areas:** Company · Mobile · App Store Intelligence · Market Intelligence · Alternative Data · Analytics · Consumer Insights · Advertising
+
+## Apptopia on APIs.io
+
+Everything profiled for Apptopia is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apptopia/](https://apis.io/providers/apptopia/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Apptopia Data API](https://apis.io/apis/apptopia/apptopia-data-api/) — Real-time REST API exposing raw mobile app-store data — apps, publishers, parent companies, SDKs, download/revenue/usage estimates, ratings, top charts, and…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [apptopia](https://apis.io/servers/apptopia/apptopia/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apptopia Authentication](https://apis.io/security/apptopia/apptopia-authentication/)
+- [Apptopia Domain Security](https://apis.io/security/apptopia/apptopia-domain-security/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apptopia Rate Limits](https://apis.io/rate-limits/apptopia/apptopia-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://apptopia.com)
+- [Documentation](https://dev.apptopia.com/)
+- [API reference](https://dev.apptopia.com/)
+- [Pricing](https://apptopia.com/en/pricing-investors/)
+- [Support](https://help.apptopia.com/knowledge)
+- [Blog](https://apptopia.com/en/insights/)
+- [Compliance](https://apptopia.com/en/our-compliance)
+- [Terms of service](https://apptopia.com/en/terms/)
+- [Privacy policy](https://apptopia.com/en/privacy/)
+- [GitHub](https://github.com/apptopia)
+
+## API Evangelist rating
+
+**Kin Score 33.7** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 42.1 |
+| Developer ergonomics | 45.2 |
+| Access clarity | 46.1 |
+
+**Agent readiness 7.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 29.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apptopia/](https://apis.io/providers/apptopia/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apptopia: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apptopia/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
